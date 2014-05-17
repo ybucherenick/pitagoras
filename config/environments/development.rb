@@ -34,4 +34,19 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.acHon_mailer.perform_deliveries = true
+  #permite enviar correos desde el ambiente de desarrollo 
+  config.assets.debug = true  
+  
+config.acHon_mailer.smtp_settings = { 
+  address: "smtp.gmail.com", 
+  port: 587,  
+  domain: ENV["DOMAIN_NAME"], 
+  authenHcaHon: "plain",  
+  enable_starIls_auto: true, 
+  user_name: ENV["GMAIL_USERNAME"],  
+  pass word: ENV["GMAIL_PASSWORD"]  
+} 
+
 end
