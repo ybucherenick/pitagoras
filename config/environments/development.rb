@@ -49,4 +49,11 @@ config.acHon_mailer.smtp_settings = {
   pass word: ENV["GMAIL_PASSWORD"]  
 } 
 
+config.action_mailer.smtp_settings = {
+:address => "smtp.mandrillapp.com",
+:port => 25,
+:user_name => ENV["MANDRILL_USERNAME"],
+:password => ENV["MANDRILL_API_KEY"]
+}
+
 end
