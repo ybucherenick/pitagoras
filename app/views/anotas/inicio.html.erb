@@ -1,0 +1,61 @@
+<head>
+	<% content_for :title do %>Alumno | Ver notas<% end %> 
+</head>
+
+<nav class="top-bar" data-topbar> 
+	<ul class="title-area"> 
+		<li class="name"> 
+			<h1><a href="inicio">Ver notas</a></h1> 
+		</li> 
+	</ul> 
+	<ul class="title-area"> 
+		<li class="name"> 
+			<h1><a href="../suscribir/inicio">Suscribirse</a></h1> 
+		</li> 
+	</ul> 
+	<ul class="title-area"> 
+		<li class="name"> 
+			<h1><%= link_to 'Salir', root_path %></h1> 
+		</li> 
+	</ul> 
+</nav>
+
+<div class="row">
+<div class="small-6 large-12 columns"><%= image_tag "BANNER2.png" %></div> 
+</div>
+
+ <h2>Notas de <%= session['nombreAlumno'] %> </h2>
+ <p>C&eacute;dula: <%= session['cedulaAlumno'] %> </p>
+<section>
+
+<table >
+    <tr>
+        <td>Materia </td> 
+        <td>Nota examen 1 </td> 
+        <td>Nota examen 2 </td> 
+        <td>Nota examen 3 </td>
+        <td>Nota definitiva </td>
+    </tr> 
+    <% cont=0 %>
+    <% for i in (1.. (@tabla.length/5)) %>
+	    <tr>
+	        <td> <%= @tabla[cont] %> </td> 
+	        <% cont=cont+1 %>
+	        <td> <%= @tabla[cont] %> </td> 
+	        <% cont=cont+1 %>
+	        <td> <%= @tabla[cont] %> </td> 
+	        <% cont=cont+1 %>
+	        <td> <%= @tabla[cont] %> </td>
+	        <% cont=cont+1 %>
+	        <td> <%= @tabla[cont] %> </td>
+	        <% cont=cont+1 %>
+		</tr>
+	<% end %>
+</table>
+</section>
+
+<footer class="row">
+<div class="small-3 large-3 columns">Derechos de autor 2014</div>
+<div class="small-3 large-3 columns">Todos los derechos reservados</div>
+
+</footer>

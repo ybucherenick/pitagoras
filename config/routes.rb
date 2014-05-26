@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  root to: 'visitantes#new'
+
+   match 'docentes/inicio', to: 'docentes#entrada', via: [:get, :post]  
+   match 'alumnos/inicio', to: 'alumnos#entrada', via: [:get, :post]  
+   match 'suscribir/inicio', to: 'suscribir#suscribe', via: [:get, :post]     
+   match 'suscribir/exito', to: 'suscribir#suscribirse', via: [:get, :post]
+
+   match 'anotas/inicio', to: 'anotas#vernotas', via: [:get, :post]
+   match 'dnotas/inicio', to: 'dnotas#vernotas', via: [:get, :post]
+
+   match 'archivos/cargar', to: 'archivos#entrada' , via: [:get, :post]
+   match 'archivos/guardar', to: 'archivos#enviar' , via: [:get, :post]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,33 @@
+<head>
+	<% content_for :title do %>Alumno<% end %> 
+</head>
+
+<nav class="top-bar" data-topbar> 
+	<ul class="title-area"> 
+		<li class="name"> 
+			<h1><a href="../anotas/inicio">Ver notas</a></h1> 
+		</li> 
+	</ul> 
+	<ul class="title-area"> 
+		<li class="name"> 
+			<h1><a href="../suscribir/inicio">Suscribirse</a></h1> 
+		</li> 
+	</ul> 
+	<ul class="title-area"> 
+		<li class="name"> 
+			<h1><%= link_to 'Salir', root_path %></h1> 
+		</li> 
+	</ul> 
+</nav>
+
+<div class="row">
+<div class="small-6 large-12 columns"><%= image_tag "BANNER2.png" %></div> 
+</div>
+
+ <h2> Bienvenido <%= session['nombreAlumno'] %> </h2>
+
+<footer class="row">
+<div class="small-3 large-3 columns">Derechos de autor 2014</div>
+<div class="small-3 large-3 columns">Todos los derechos reservados</div>
+
+</footer>

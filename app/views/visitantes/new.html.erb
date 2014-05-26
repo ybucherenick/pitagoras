@@ -1,0 +1,75 @@
+<% content_for :title do %>Pit&aacute;goras<% end %>
+<section>
+<div class="row">
+<div class="small-6 large-12 columns"><%= image_tag "BANNER2.png" %></div> 
+</div>
+
+</section>
+<section>
+<div class="row">
+
+  <div class="large-6 columns">
+  		
+  		<div class="large-6 columns">
+          <p>  </p>
+		<p> <a href="#" data-reveal-id="firstModal" class="radius button" style='width:250px;'>DOCENTE</a> </p>
+  		</div>
+
+		<div id="firstModal" class="reveal-modal" data-reveal>
+  			<h2>Docente</h2>
+  			<div class="large-6 columns">
+
+          <%= form_tag("docentes/inicio", method: "get") do %>
+  				<p>Por favor ingrese..</p>
+  				<p align="center"> Clave: <%= password_field_tag(:clave) %> </p>
+          <%= submit_tag("Aceptar") %>
+          <% end %>
+
+  			</div>
+
+
+  			<div class="large-6 columns">
+  				<p class="small-6 large-12 columns center" > <%= image_tag "login.jpg" %> </p>
+  			</div>
+
+  			<a class="close-reveal-modal">&#215;</a>
+		</div>
+  </div> 
+ 
+  <div class="large-6 columns">
+
+  		<p>  </p>
+  		
+  		<div class="large-6 columns">
+  			<p> <a href="#" data-reveal-id="firstModal1" class="radius button" style='width:250px;'>ALUMNO</a> </p>
+  		</div>
+
+		<div id="firstModal1" class="reveal-modal" data-reveal>
+  			<h2>Alumno</h2>
+  			<div class="large-6 columns">
+
+          <%= form_tag("alumnos/inicio", method: "get") do %>
+          <p>Por favor ingrese..</p>
+          <p align="center"> C&eacute;dula: <%= text_field_tag(:cedula) %> </p>
+          <%= submit_tag("Aceptar") %>
+          <% end %>
+          
+  			</div>
+  			<div class="large-6 columns">
+  				<p class="small-6 large-12 columns" > <%= image_tag "login.jpg" %> </p>
+  			</div>
+
+  			<a class="close-reveal-modal">&#215;</a>
+		</div>
+  
+  </div>
+
+
+</div>
+</section>
+
+<footer class="row">
+<div class="small-3 large-3 columns">Derechos de autor 2014</div>
+<div class="small-3 large-3 columns">Todos los derechos reservados</div>
+
+</footer>
