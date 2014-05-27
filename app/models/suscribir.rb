@@ -1,7 +1,16 @@
 class Suscribir < ActiveRecord::Base
   has_no_table
   column :email, :string
+  column :cedula, :string
+  column :apellido, :string
+  column :nombre, :string
+  column :materia, :string
+  
+  validates_presence_of :cedula
+  validates_presence_of :apellido
+  validates_presence_of :nombre
   validates_presence_of :email
+  validates_presence_of :materia
   validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
 
   def suscribete_Contabilidad

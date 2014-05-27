@@ -10,7 +10,7 @@ class ArchivosController < ApplicationController
      	render 'archivos/cargar'
   	end
 
-
+  	#Verifico la ruta que se envia junto a la materia del docente al metodo subir que se encuentra en el modelo
 	def enviar
 		@archivo = Archivo.new(secure_params)
 		if @archivo.valid?

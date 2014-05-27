@@ -5,7 +5,7 @@ class AlumnosController < ApplicationController
 		@alumno = Alumno.new
 	end
 
-
+  #Se definen las variables de sesion del alumno
   def entrada
      @cedulaRecibida = params[:cedula];
      if @cedulaRecibida=='20123445' 

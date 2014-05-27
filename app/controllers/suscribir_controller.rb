@@ -10,10 +10,13 @@ class SuscribirController < ApplicationController
      	  render 'suscribir/inicio'
   end
 
+    #Se suscribe un alumno en la materia que el quiera siempre y cuando se encuentre en la hoja de calculo
+    # de dicha materia, despues de verificar esto se llama al metodo suscribete_<nombre_Materia> donde se
+    # realiza la inscripcion
   	def suscribirse
   		@suscribir = Suscribir.new(secure_params)
   		@materiaRecibida = params[:materia];
-
+  		#UsuarioCorreo.contacto_email(@suscribir).deliver
   		connection = GoogleDrive.login(ENV["GMAIL_USERNAME"], ENV["GMAIL_PASSWORD"]) 
   		esta = 'no'
 
@@ -29,6 +32,7 @@ class SuscribirController < ApplicationController
 
 	        if esta=='si'
 				@suscribir.suscribete_Contabilidad		
+				#UsuarioCorreo.contacto_email(@suscribir).deliver
 				flash[:notice]= "Se registro en nuetra lista de correo de Contabilidad"
 				render 'suscribir/exito'
 			elsif esta=='no'
@@ -85,7 +89,7 @@ class SuscribirController < ApplicationController
 
 	private 
 	def secure_params
-		params.permit(:email)
+		params.permit(:email, :cedula, :apellido, :nombre, :materia)
 	end
 
 end
